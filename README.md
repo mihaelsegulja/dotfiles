@@ -1,7 +1,7 @@
 # dotfiles
 [WorkInProgress] My dotfiles
 
-# Usage
+## Usage
 ```shell
 stow btop nvim p10k zsh
 ```
