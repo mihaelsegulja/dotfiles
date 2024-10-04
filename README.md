@@ -1,5 +1,5 @@
 # dotfiles
-[WorkInProgress] My dotfiles
+My dotfiles
 
 ## Usage
 ```shell
