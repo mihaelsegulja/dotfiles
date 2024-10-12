@@ -6,11 +6,14 @@ My dotfiles and config files
 
 ### Script
 
+In order to use the script, you have to install `stow`.
+
 Add execution permission for the file if needed:
 
 ```bash
 chmod +x ./symlink_dotfiles.sh
 ```
+
 Run the script:
 
 ```shell
