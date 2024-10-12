@@ -2,8 +2,12 @@
 
 # A small script for symlinking dotfiles with stow
 
+if ! command -v stow &> /dev/null; then
+    echo "Error: stow is not installed. Please install it first."
+    exit 1
+fi
+
 for dir in */ ; do
-    sleep 0.25
     folder_name=${dir%/}
     if [ -d "$folder_name" ]; then
         echo "Symlinking $folder_name"
@@ -11,5 +15,4 @@ for dir in */ ; do
     fi
 done
 
-sleep 0.2
 echo "Done."
