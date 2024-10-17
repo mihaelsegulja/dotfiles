@@ -42,7 +42,7 @@ code --list-extensions > extensions-list.txt
 
 #### Restore
 
-Restore (install) extensions one by one from `extensions-list.txt`
+Restore (install) extensions from `extensions-list.txt`
 
 ```shell
 cat extensions-list.txt | xargs -n 1 code --install-extension
