@@ -5,6 +5,7 @@ catppuccin.catppuccin-vsc-icons
 davidanson.vscode-markdownlint
 eamodio.gitlens
 enkia.tokyo-night
+esbenp.prettier-vscode
 formulahendry.code-runner
 geequlim.godot-tools
 jdinhlife.gruvbox
