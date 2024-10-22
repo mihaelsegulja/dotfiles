@@ -2,6 +2,9 @@
 
 My dotfiles and config files
 
+> [!IMPORTANT]
+> This repository is made for my personal use, so I can't guarantee that everything will work properly with your setup. However, feel free to copy or adapt any files to suit your needs.
+
 ## Usage
 
 ### Script
