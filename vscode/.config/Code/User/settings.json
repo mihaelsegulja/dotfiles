@@ -1,0 +1,34 @@
+{
+    "workbench.colorTheme": "Tokyo Night",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "security.workspace.trust.untrustedFiles": "open",
+    "mssql.connections": [
+        {
+            "server": "127.0.0.1",
+            "database": "",
+            "authenticationType": "SqlLogin",
+            "user": "sa",
+            "password": "",
+            "emptyPasswordInput": false,
+            "savePassword": true,
+            "encrypt": "Mandatory",
+            "trustServerCertificate": true,
+            "connectTimeout": 15,
+            "commandTimeout": 30,
+            "applicationName": "vscode-mssql"
+        }
+    ],
+    "dotnet.server.extensionPaths": [
+    
+    ],
+    "open-php-html-js-in-browser.selectedBrowser": "Firefox",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "window.titleBarStyle": "custom"
+}
