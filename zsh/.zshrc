@@ -120,5 +120,3 @@ export PATH="/usr/share/dotnet/sdk:$PATH"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
-
-export PATH=$PATH:/home/$USER/.spicetify

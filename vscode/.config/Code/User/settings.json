@@ -1,7 +1,6 @@
 {
-    "workbench.colorTheme": "Tokyo Night",
     "editor.fontFamily": "'JetBrainsMono Nerd Font'",
-    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.iconTheme": "material-icon-theme",
     "security.workspace.trust.untrustedFiles": "open",
     "mssql.connections": [
         {
@@ -30,5 +29,6 @@
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "window.titleBarStyle": "custom"
+    "window.titleBarStyle": "custom",
+    "workbench.colorTheme": "Tokyo Night"
 }

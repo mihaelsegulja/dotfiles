@@ -14,13 +14,13 @@ In order to use the script, you have to install `stow`.
 Add execution permission for the file if needed:
 
 ```bash
-chmod +x ./symlink_dotfiles.sh
+chmod +x ./setup.sh
 ```
 
 Run the script:
 
 ```shell
-./symlink_dotfiles.sh
+./setup.sh
 ```
 
 ### Manually
