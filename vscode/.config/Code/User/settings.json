@@ -29,6 +29,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "window.titleBarStyle": "custom",
-    "workbench.colorTheme": "Tokyo Night",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.iconTheme": "material-icon-theme"
 }
