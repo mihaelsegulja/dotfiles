@@ -30,5 +30,7 @@
     },
     "window.titleBarStyle": "custom",
     "workbench.colorTheme": "Gruvbox Dark Hard",
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "mssql.objectExplorer.groupBySchema": true,
+    "liveServer.settings.donotVerifyTags": true
 }

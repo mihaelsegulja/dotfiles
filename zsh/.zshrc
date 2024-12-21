@@ -117,6 +117,3 @@ source $ZSH/oh-my-zsh.sh
 
 # Dotnet path
 export PATH="/usr/share/dotnet/sdk:$PATH"
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
