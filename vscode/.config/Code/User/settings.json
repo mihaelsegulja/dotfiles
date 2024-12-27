@@ -29,8 +29,8 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "window.titleBarStyle": "custom",
-    "workbench.colorTheme": "Gruvbox Dark Hard",
     "workbench.iconTheme": "material-icon-theme",
     "mssql.objectExplorer.groupBySchema": true,
-    "liveServer.settings.donotVerifyTags": true
+    "liveServer.settings.donotVerifyTags": true,
+    "workbench.colorTheme": "Gruvbox Dark Hard"
 }

@@ -1,7 +1,5 @@
 angular.ng-template
 bierner.markdown-emoji
-catppuccin.catppuccin-vsc
-catppuccin.catppuccin-vsc-icons
 davidanson.vscode-markdownlint
 eamodio.gitlens
 enkia.tokyo-night
@@ -9,7 +7,6 @@ esbenp.prettier-vscode
 formulahendry.code-runner
 geequlim.godot-tools
 jdinhlife.gruvbox
-jonathanharty.gruvbox-material-icon-theme
 ms-azuretools.vscode-docker
 ms-dotnettools.csdevkit
 ms-dotnettools.csharp
