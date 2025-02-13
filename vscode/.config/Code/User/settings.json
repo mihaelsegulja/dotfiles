@@ -32,5 +32,9 @@
     "workbench.iconTheme": "material-icon-theme",
     "mssql.objectExplorer.groupBySchema": true,
     "liveServer.settings.donotVerifyTags": true,
-    "workbench.colorTheme": "Gruvbox Dark Hard"
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "liveServer.settings.donotShowInfoMsg": true
 }

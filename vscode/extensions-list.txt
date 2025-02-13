@@ -1,4 +1,3 @@
-angular.ng-template
 bierner.markdown-emoji
 davidanson.vscode-markdownlint
 eamodio.gitlens
