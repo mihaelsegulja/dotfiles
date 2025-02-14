@@ -1,6 +1,6 @@
 # dotfiles
 
-My dotfiles and config files
+My dotfiles
 
 > [!IMPORTANT]
 > This repository is made for my personal use, so I can't guarantee that everything will work properly with your setup. However, feel free to copy or adapt any files to suit your needs.
@@ -11,15 +11,11 @@ My dotfiles and config files
 
 In order to use the script, you have to install `stow`.
 
-Add execution permission for the file if needed:
-
-```bash
-chmod +x ./setup.sh
-```
-
-Run the script:
-
 ```shell
+# Add execution permission for the file if needed:
+chmod +x ./setup.sh
+
+# Run the script:
 ./setup.sh
 ```
 
@@ -35,18 +31,12 @@ stow nvim zsh p10k
 
 ### VSCode extensions
 
-#### Backup
-
-Backup the extension names to `extensions-list.txt`
-
 ```shell
-code --list-extensions > extensions-list.txt
-```
+cd vscode/
 
-#### Restore
-
-Restore (install) extensions from `extensions-list.txt`
-
-```shell
+# Restore (install) extensions from `extensions-list.txt`
 cat extensions-list.txt | xargs -n 1 code --install-extension
+
+# Backup the extension names to `extensions-list.txt`
+code --list-extensions > extensions-list.txt
 ```
