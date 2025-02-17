@@ -7,14 +7,15 @@
             "database": "",
             "authenticationType": "SqlLogin",
             "user": "sa",
-            "password": "",
             "emptyPasswordInput": false,
             "savePassword": true,
-            "encrypt": "Mandatory",
+            "encrypt": "Optional",
             "trustServerCertificate": true,
             "connectTimeout": 15,
             "commandTimeout": 30,
-            "applicationName": "vscode-mssql"
+            "applicationName": "vscode-mssql",
+            "displayName": "127.0.0.1, <default> (sa)",
+            "password": ""
         }
     ],
     "dotnet.server.extensionPaths": [
@@ -36,5 +37,7 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "liveServer.settings.donotShowInfoMsg": true
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.accessibilitySupport": "off",
+    "mssql.enableRichExperiences": true
 }

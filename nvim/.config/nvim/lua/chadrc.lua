@@ -6,20 +6,18 @@
 local M = {}
 
 M.base46 = {
-	theme = "gruvbox",
-
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+  theme = "gruvbox",
+  hl_override = {
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+  },
 }
 
 M.ui = {
-  telescope = { style = "bordered" }
-}
-
-M.nvdash = {
-  load_on_startup = true
+  telescope = { style = "bordered" },
+  hl_override = {
+    CursorLine = { bg = "one_bg" },
+  },
 }
 
 return M
