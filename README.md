@@ -1,38 +1,44 @@
 # dotfiles
 
-My dotfiles
+My dotfiles and setup scripts
 
 > [!IMPORTANT]
 > This repository is made for my personal use, so I can't guarantee that everything will work properly with your setup. However, feel free to copy or adapt any files to suit your needs.
 
-## Usage
+## dotfiles
 
-### Script
+The `dotfiles/` directory contains, well, my dotfiles, which are managed with `stow`.
 
-In order to use the script, you have to install `stow`.
+## scripts
+
+The `scripts/` directory contains all scripts.
+
+In order to use any script:
 
 ```shell
+cd scripts/
+
 # Add execution permission for the file if needed:
-chmod +x ./setup.sh
+chmod +x ./script_name.sh
 
 # Run the script:
-./setup.sh
+./script_name.sh
 ```
 
-### Manually
+`stow_dotfiles.sh`
 
-Just run `stow` and the name of the package(s) you want to symlink, e.g.:
+- symlinks all dotfiles from `dotfiles/` using `stow`
 
-```shell
-stow nvim zsh p10k
-```
+`install_packages_arch.sh`
+
+- installs arch and Flatpak packages from lists
 
 ## Other
 
 ### VSCode extensions
 
 ```shell
-cd vscode/
+cd dotfiles/vscode/
 
 # Restore (install) extensions from `extensions-list.txt`
 cat extensions-list.txt | xargs -n 1 code --install-extension

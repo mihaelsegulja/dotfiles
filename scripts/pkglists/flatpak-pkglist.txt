@@ -1,0 +1,3 @@
+com.spotify.Client
+com.usebottles.bottles
+nz.mega.MEGAsync
