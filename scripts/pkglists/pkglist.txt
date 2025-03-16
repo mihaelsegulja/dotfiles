@@ -1,5 +1,4 @@
 ark
-azuredatastudio-bin
 bat
 bauh
 bluedevil

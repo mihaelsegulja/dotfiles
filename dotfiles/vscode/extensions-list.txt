@@ -5,7 +5,6 @@ esbenp.prettier-vscode
 formulahendry.code-runner
 geequlim.godot-tools
 jdinhlife.gruvbox
-johnpapa.vscode-peacock
 ms-azuretools.vscode-docker
 ms-dotnettools.csdevkit
 ms-dotnettools.csharp
@@ -26,7 +25,6 @@ pkief.material-icon-theme
 platformio.platformio-ide
 postman.postman-for-vscode
 primafuture.open-php-html-js-in-browser
-rangav.vscode-thunder-client
 ritwickdey.liveserver
 timonwong.shellcheck
 twxs.cmake
