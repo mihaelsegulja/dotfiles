@@ -7,7 +7,7 @@ My dotfiles and setup scripts
 
 ## dotfiles
 
-The `dotfiles/` directory contains, my dotfiles, which are managed with `stow`.
+The `dotfiles/` directory contains my dotfiles, which are managed with `stow`.
 
 ## scripts
 
