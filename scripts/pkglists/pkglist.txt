@@ -51,15 +51,16 @@ obsidian
 okular
 openrgb
 otf-firamono-nerd
+pokemon-colorscripts-git
 powerline-fonts
 qalculate-gtk
 qbittorrent
 reflector
 reflector-simple
+rider
 spectacle
 steam
 stow
-tmux
 ttf-bitstream-vera
 ttf-cascadia-mono-nerd
 ttf-dejavu

@@ -3,7 +3,7 @@
     "security.workspace.trust.untrustedFiles": "open",
     "mssql.connections": [
         {
-            "server": "127.0.0.1",
+            "server": ".",
             "database": "",
             "authenticationType": "SqlLogin",
             "user": "sa",
@@ -14,8 +14,11 @@
             "connectTimeout": 15,
             "commandTimeout": 30,
             "applicationName": "vscode-mssql",
-            "displayName": "127.0.0.1, <default> (sa)",
-            "password": ""
+            "displayName": "., <default> (sa)",
+            "password": "",
+            "id": "D29A95AB-401F-4909-8324-693B3179B343",
+            "groupId": "1DB03944-BF89-4800-8B18-48E942DE7E00",
+            "profileSource": 0
         }
     ],
     "dotnet.server.extensionPaths": [
@@ -39,5 +42,12 @@
     },
     "liveServer.settings.donotShowInfoMsg": true,
     "editor.accessibilitySupport": "off",
-    "mssql.enableRichExperiences": true
+    "mssql.enableRichExperiences": true,
+    "editor.copyWithSyntaxHighlighting": false,
+    "mssql.connectionGroups": [
+        {
+            "name": "ROOT",
+            "id": "1DB03944-BF89-4800-8B18-48E942DE7E00"
+        }
+    ]
 }
