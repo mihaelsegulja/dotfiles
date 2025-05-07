@@ -5,13 +5,13 @@ My dotfiles and setup scripts
 > [!IMPORTANT]
 > This repository is made for my personal use, so I can't guarantee that everything will work properly with your setup. However, feel free to copy or adapt any files to suit your needs.
 
-## dotfiles
+## Dotfiles
 
-The `dotfiles/` directory contains my dotfiles, which are managed with `stow`.
+The `dots/` directory contains my dotfiles, which are managed with `stow`.
 
-## scripts
+## Scripts
 
-The `scripts/` directory contains all scripts.
+The `scripts/` directory contains scripts for helping with setting up dotfiles and packages.
 
 In order to use any script:
 
@@ -27,22 +27,36 @@ chmod +x ./script_name.sh
 
 `stow_dotfiles.sh`
 
-- symlinks all dotfiles from `dotfiles/` using `stow`
+- Symlinks all dotfiles from `dots/` using `stow`
+
+- You can also pass the flag `-D` or `--unstow` to unstow dotfiles
 
 `install_packages_arch.sh`
 
-- installs arch and Flatpak packages from lists
+- Installs Arch and Flatpak packages from package lists (`scripts/pkglists/`)
 
 ## Other
 
-### VSCode extensions
+### Oh My Zsh
+
+Install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh):
 
 ```shell
-cd dotfiles/vscode/
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
-# Restore (install) extensions from `extensions-list.txt`
+### VSCode extensions
+
+To restore (install) extensions from list:
+
+```shell
+cd dots/vscode/
+
 cat extensions-list.txt | xargs -n 1 code --install-extension
+```
 
-# Backup the extension names to `extensions-list.txt`
+To backup current extensions:
+
+```shell
 code --list-extensions > extensions-list.txt
 ```

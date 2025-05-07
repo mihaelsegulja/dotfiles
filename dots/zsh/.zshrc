@@ -112,7 +112,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Shows a random pokemon
+# Displays a random pokemon
 pokemon-colorscripts -r
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
