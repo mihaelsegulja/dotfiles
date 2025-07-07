@@ -53,7 +53,7 @@
         "interval": 0
     },
     "tray": {
-        "icon-size": 20,
+        "icon-size": 18,
         "spacing": 10
     },
     "clock": {
@@ -125,11 +125,11 @@
     "network": {
         "format-wifi": "({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr}\n{bandwidthUpBits} {bandwidthDownBits} ",
+        "tooltip-format": "{essid}\n{ifname}: {ipaddr}/{cidr} via {gwaddr}\n{bandwidthUpBits} {bandwidthDownBits}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "interval": 2
+        "interval": 2,
+        "on-click": "nm-connection-editor"
     },
     "mpris": {
         "format": "{player_icon} {dynamic}",
