@@ -1,15 +1,14 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 3, // Gaps between modules (4px)
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 25, // Waybar height (to be removed for auto height)
+    "spacing": 3, // Gaps between modules (3px)
     
     // Module order
     "modules-left": [
         "hyprland/workspaces",
-        "scratchpad",
+        "custom/scratchpad",
         "hyprland/window"
     ],
     "modules-center": [
@@ -19,14 +18,7 @@
         "pulseaudio",
         "bluetooth",
         "network",
-        "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
         "hyprland/language",
-        "battery",
         "clock",
         "tray",
         "custom/power"
@@ -34,7 +26,7 @@
 
     // Modules configuration
     "hyprland/window": {
-        "max-length": 50
+        "max-length": 60
     },
     "keyboard-state": {
         "numlock": true,
@@ -49,29 +41,45 @@
         }
     },
     "hyprland/language": {
-        "format": " {}",
+        "format": " {}",
         "format-en": "US",
         "format-hr": "HR"
     },
-    "scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
+    "custom/scratchpad": {
+        "format": " ",
         "tooltip": true,
-        "tooltip-format": "{app}: {title}"
+        "tooltip-format": "Toggle scratchpad",
+        "on-click": "hyprctl dispatch togglespecialworkspace scratchpad",
+        "interval": 0
     },
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10,
-        // "icons": {
-        //   "blueman": "bluetooth",
-        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-        // }
+        "icon-size": 20,
+        "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d.%m.%Y.}"
+        "tooltip-format": "<big>{:%H:%M:%S}</big>\n<tt><small>{calendar}</small></tt>",
+        "interval": 1,
+        "format": "{:%H:%M - %d.%m.%Y.}",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#fabd2f'><b>{}</b></span>",
+                "days": "<span color='#d3869b'><b>{}</b></span>",
+                "weeks": "<span color='#8ec07c'><b>W{}</b></span>",
+                "weekdays": "<span color='#83a598'><b>{}</b></span>",
+                "today": "<span color='#fb4934'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "tz_up",
+            "on-scroll-down": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
     "cpu": {
         "format": "{usage}% ",
@@ -81,15 +89,12 @@
         "format": "{}% "
     },
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
         "format-critical": "{temperatureC}°C {icon}!",
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
     "backlight": {
-        // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
@@ -107,30 +112,30 @@
         "format-icons": ["", "", "", "", ""]
     },
     "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format": "{ifname} via {gwaddr}\n{bandwidthUpBits} {bandwidthDownBits} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "interval": 2
     },
     "mpris": {
         "format": "{player_icon} {dynamic}",
         "format-paused": "{status_icon} <i>{dynamic}</i>",
         "interval": 1,
-        "dynamic-len": 40,
+        "dynamic-len": 50,
         "player-icons": {
             "default": "▶",
             "spotify": " ",
@@ -157,7 +162,9 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
     },
     "bluetooth": {
         "format": " {status}",
@@ -166,12 +173,14 @@
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager"
     },
     "custom/power": {
         "format" : "⏻ ",
 		    "tooltip": false,
-		    "menu": "on-click",
+        "on-click": "wlogout",
+		    "menu": "on-click-right",
 		    "menu-file": "$HOME/.config/waybar/power_menu.xml", 
         "menu-actions": {
             "shutdown": "systemctl poweroff",

@@ -5,7 +5,6 @@
 
 window#waybar {
     background-color: rgba(40, 40, 40, 0.95);
-    border-bottom: 3px solid rgba(60, 56, 54, 0.8);
     color: #ebdbb2;
     transition-property: background-color;
     transition-duration: .5s;
@@ -31,13 +30,14 @@ button:hover {
     background-color: transparent;
     color: #ebdbb2;
     border-right: 1px solid #928374;
+    font-weight: 500;
 }
 
 #workspaces button:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     background-color: #3c3836;
     box-shadow: inset 0 -3px #fabd2f;
 }
@@ -55,14 +55,13 @@ button:hover {
 #backlight,
 #network,
 #pulseaudio,
-#wireplumber,
 #tray,
+#mpris,
 #keyboard-state,
 #language,
-#scratchpad,
 #power-profiles-daemon {
     padding: 0 10px;
-    border-bottom: 3px solid currentColor;
+    border-bottom: 2px solid currentColor;
 }
 
 #clock {
@@ -136,19 +135,19 @@ label:focus {
 }
 
 #pulseaudio {
-    color: #fabd2f;
+    color: #d79921;
 }
 
 #pulseaudio.muted {
     color: #928374;
 }
 
-#wireplumber {
+#mpris {
     color: #d3869b;
 }
 
-#wireplumber.muted {
-    color: #fb4934;
+#mpris.paused {
+    color: #b16286;
 }
 
 #temperature {
@@ -192,11 +191,16 @@ label:focus {
     background: rgba(255, 255, 255, 0.05);
 }
 
-#scratchpad {
-    background: rgba(255, 255, 255, 0.05);
+#custom-scratchpad {
+    padding: 0 7px;
+    border-right: 1px solid #928374;
 }
 
-#scratchpad.empty {
+#custom-scratchpad.active {
+    border-bottom-color: currentColor;
+}
+
+#custom-scratchpad.empty {
     background-color: transparent;
 }
 
@@ -220,7 +224,25 @@ label:focus {
 #privacy-item.audio-out {
     color: #83a598;
 }
+
 #custom-power {
     padding: 0 7px;
-    color: #b16286;
+    color: #fb4934;
 }
+
+#custom-power:hover {
+    border-bottom: 2px solid currentColor;
+}
+
+#bluetooth.disabled {
+    color: #928374;
+}
+
+#bluetooth.on {
+    color: #83a598;
+}
+
+#bluetooth.connected {
+    color: #458588;
+}
+
