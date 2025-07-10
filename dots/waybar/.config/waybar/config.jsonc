@@ -41,7 +41,7 @@
         }
     },
     "hyprland/language": {
-        "format": " {}",
+        "format": "  {}",
         "format-en": "US",
         "format-hr": "HR"
     },
@@ -137,20 +137,21 @@
         "interval": 1,
         "dynamic-len": 50,
         "player-icons": {
-            "default": "▶",
+            "default": " ",
             "spotify": " ",
             "chromium": " " //yt music
         },
         "status-icons": {
-            "paused": "⏸"
+            "paused": " ",
+            "stopped": " "
         }
     },
     "pulseaudio": {
         "scroll-step": 5,
         "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth-muted": "  {icon}  {format_source}",
+        "format-muted": "  {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {

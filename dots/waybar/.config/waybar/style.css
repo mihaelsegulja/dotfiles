@@ -173,7 +173,7 @@ label:focus {
 #language {
     color: #8ec07c;
     padding: 0 5px;
-    min-width: 16px;
+    min-width: 40px;
 }
 
 #keyboard-state {
