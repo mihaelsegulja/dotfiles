@@ -49,5 +49,12 @@
             "name": "ROOT",
             "id": "1DB03944-BF89-4800-8B18-48E942DE7E00"
         }
-    ]
+    ],
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "javascript.suggest.autoImports": true,
+    "typescript.suggest.autoImports": true,
+    "javascript.preferences.importModuleSpecifier": "shortest",
+    "typescript.preferences.importModuleSpecifier": "shortest",
 }

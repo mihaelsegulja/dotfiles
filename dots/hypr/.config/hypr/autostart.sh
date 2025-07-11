@@ -15,5 +15,5 @@ sleep 2 && nm-applet &
 
 sleep 3 && kdeconnect-indicator &
 
-sleep 4 && flatpak run nz.mega.MEGAsync &
+sleep 4 && megasync &
 
