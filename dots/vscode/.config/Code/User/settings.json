@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "editor.fontFamily": "'FiraMono Nerd Font'",
     "security.workspace.trust.untrustedFiles": "open",
     "mssql.connections": [
         {

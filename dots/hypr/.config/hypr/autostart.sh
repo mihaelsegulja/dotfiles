@@ -3,11 +3,12 @@
 waybar &
 dunst &
 hyprpaper &
+waypaper --restore &
 
 wl-paste --watch cliphist store &
 wl-clip-persist --clipboard regular &
 
-systemctl --user start polkit-kde-agent &
+/usr/lib/polkit-kde-authentication-agent-1 &
 
 swayidle -w timeout 180 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' &
 
