@@ -5,6 +5,27 @@ My dotfiles and setup scripts
 > [!IMPORTANT]
 > This repository is made for my personal use, so I can't guarantee that everything will work properly with your setup. However, feel free to copy or adapt any files to suit your needs.
 
+## My Setup
+
+![desktop005](assets/desktop005.png)
+
+![desktop001](assets/desktop001.png)
+
+![desktop004](assets/desktop004.png)
+
+- 🖥️ **OS / DE:** EndeavourOS / KDE Plasma 6.x
+- 🎨 **Theme:** [Gruvbox](https://github.com/morhetz/gruvbox)
+- 🎨 **Plasma Theme:**
+  - [Klassy](https://github.com/paulmcauley/klassy) (Application Style, Window Decorations)
+  - [GruvboxPlasma](https://www.pling.com/p/1327719/) (Plasma Style, Colors)
+- 🧱 **Icons:** [Papirus Colors Dark](https://store.kde.org/p/1651940)
+- 🧮 **Font:** Fira Sans + Fira Code Nerd Font
+- 🛠️ **KWin Scripts:** [KZones](https://github.com/gerritdevriese/kzones)
+- 📦 **Terminal:** Konsole
+- 📂 **File Manager:** Dolphin
+- 📜 **Editors:** Neovim + NVChad, VSCode, Kate
+- 🖼️ **Wallpaper:** [here](assets/wallpaper001.jpg)
+
 ## Dotfiles
 
 The `dots/` directory contains my dotfiles, which are managed with `stow`.
