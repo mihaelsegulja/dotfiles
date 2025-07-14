@@ -18,6 +18,10 @@ M.ui = {
   hl_override = {
     CursorLine = { bg = "one_bg" },
   },
+  statusline = {
+    separator_style = "block",
+    theme = "default"
+  }
 }
 
 M.nvdash = {
