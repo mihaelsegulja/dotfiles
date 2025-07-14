@@ -9,10 +9,6 @@ My dotfiles and setup scripts
 
 ![desktop005](assets/desktop005.png)
 
-![desktop001](assets/desktop001.png)
-
-![desktop004](assets/desktop004.png)
-
 - 🖥️ **OS / DE:** EndeavourOS / KDE Plasma 6.x
 - 🎨 **Theme:** [Gruvbox](https://github.com/morhetz/gruvbox)
 - 🎨 **Plasma Theme:**
