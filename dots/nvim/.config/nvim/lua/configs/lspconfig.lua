@@ -12,7 +12,8 @@ local servers = {
   "bashls",
   "sqlls",
   "marksman",
-  "jdtls"
+  "jdtls",
+  "asm_lsp"
 }
 
 local nvlsp = require "nvchad.configs.lspconfig"
@@ -33,4 +34,10 @@ lspconfig.omnisharp.setup {
     "--hostPID",
     tostring(vim.fn.getpid())
   }
+}
+
+lspconfig.asm_lsp.setup {
+  cmd = { "asm-lsp" },
+  filetypes = { "asm", "vmasm", "nasm" },
+  root_dir = lspconfig.util.root_pattern(".asm-lsp.toml", ".", ".git")
 }

@@ -14,6 +14,8 @@ M.base46 = {
 }
 
 M.ui = {
+  number = true,
+  relativenumber = true,
   telescope = { style = "bordered" },
   hl_override = {
     CursorLine = { bg = "one_bg" },

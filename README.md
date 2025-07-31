@@ -18,7 +18,6 @@ My dotfiles and setup scripts
 - 📦 **Terminal:** Konsole
 - 📂 **File Manager:** Dolphin
 - 📜 **Editors:** Neovim + NVChad, VSCode, Kate
-- 🖼️ **Wallpaper:** [here](assets/wallpaper001.jpg)
 
 ## Dotfiles
 
