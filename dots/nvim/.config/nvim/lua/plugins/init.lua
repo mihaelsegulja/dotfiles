@@ -2,6 +2,8 @@ return {
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
+    lazy = false,
+    cmd = { "ConformInfo" },
     opts = require "configs.conform",
   },
   {
@@ -62,7 +64,7 @@ return {
         mouse_providers = {
             'LSP'
         },
-        mouse_delay = 900
+        mouse_delay = 500
       }
     end
   },

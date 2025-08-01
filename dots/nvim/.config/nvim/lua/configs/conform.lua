@@ -1,15 +1,32 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    -- css = { "prettier" },
-    -- html = { "prettier" },
+    cpp = { "clang_format" },
+    c = { "clang_format" },
+    javascript = { "prettier" },
+    typescript = { "prettier" },
+    html = { "prettier" },
+    css = { "prettier" },
+    scss = { "prettier" },
+    json = { "prettier" },
+    markdown = { "prettier" },
+    c_sharp = { "csharpier" },
   },
-
-  -- format_on_save = {
-  --   -- These options will be passed to conform.format()
-  --   timeout_ms = 500,
-  --   lsp_fallback = true,
-  -- },
+  formatters = {
+    clang_format = {
+      command = "clang-format",
+      args = { "--assume-filename", "$FILENAME" },
+    },
+    prettier = {
+      command = "prettier",
+      args = { "--stdin-filepath", "$FILENAME" },
+    },
+    csharpier = {
+      command = "csharpier",
+      args = { "--write-stdout", "--fast", "$FILENAME" },
+    },
+  },
+  format_on_save = { timeout_ms = 500, lsp_fallback = true },
 }
 
 return options
