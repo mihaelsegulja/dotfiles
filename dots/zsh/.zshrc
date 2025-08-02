@@ -123,3 +123,17 @@ export PATH="/usr/share/dotnet/sdk:$PATH"
 # Dotnet tools
 export PATH="$PATH:/home/miki/.dotnet/tools"
 
+# Aliases
+
+# git
+alias gs="git status --short"
+alias gd="git diff"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gu="git pull"
+alias gl="git log --decorate --graph --all"
+alias gb="git branch"
+alias gi="git init"
+alias gcl="git clone"
+

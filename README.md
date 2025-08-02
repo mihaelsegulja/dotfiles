@@ -59,6 +59,25 @@ Install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh):
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+### .gitconfig
+
+```shell
+[user]
+	name = some-username
+	email = some-username@some-domain.net
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+
+```
+
 ### VSCode extensions
 
 To restore (install) extensions from list:
