@@ -14,7 +14,7 @@ My dotfiles and setup scripts
   - [GruvboxPlasma](https://www.pling.com/p/1327719/) (Plasma Style, Colors)
 - 🧱 **Icons:** [Papirus Colors Dark](https://store.kde.org/p/1651940)
 - 🧮 **Font:** Fira Sans + Fira Code Nerd Font
-- 🛠️ **KWin Scripts:** [KZones](https://github.com/gerritdevriese/kzones)
+- 🛠️ **KWin Scripts:** [Krohnkite](https://github.com/anametologin/krohnkite)
 - 📦 **Terminal:** Konsole
 - 📂 **File Manager:** Dolphin
 - 📜 **Editors:** Neovim + NVChad, VSCode, Kate
