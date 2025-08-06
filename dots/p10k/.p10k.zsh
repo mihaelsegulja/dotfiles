@@ -31,9 +31,9 @@
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
-    user
-    host
-    # os_icon                 # os identifier
+    #user
+    #host
+    os_icon                 # os identifier
     dir                     # current directory
     vcs                     # git status
     # =========================[ Line #2 ]=========================
@@ -339,14 +339,14 @@
   # typeset -g POWERLEVEL9K_DIR_CLASSES=()
 
   # Custom prefix.
-  typeset -g POWERLEVEL9K_DIR_PREFIX='%fin '
+  #typeset -g POWERLEVEL9K_DIR_PREFIX='%fin '
 
   #######################################[ custom ]#############################################
-  typeset -g POWERLEVEL9K_HOST_PREFIX='%fat '
-  typeset -g POWERLEVEL9K_USER_ICON=''
-  typeset -g POWERLEVEL9K_HOST_ICON='󰇅'
-  typeset -g POWERLEVEL9K_USER_FOREGROUND=6
-  typeset -g POWERLEVEL9K_HOST_FOREGROUND=7
+  #typeset -g POWERLEVEL9K_HOST_PREFIX='%fat '
+  #typeset -g POWERLEVEL9K_USER_ICON=''
+  #typeset -g POWERLEVEL9K_HOST_ICON='󰇅'
+  #typeset -g POWERLEVEL9K_USER_FOREGROUND=6
+  #typeset -g POWERLEVEL9K_HOST_FOREGROUND=7
 
   #####################################[ vcs: git status ]######################################
   # Branch icon. Set this parameter to '\UE0A0 ' for the popular Powerline branch icon.

@@ -121,7 +121,7 @@ pokemon-colorscripts -r
 # Dotnet
 export PATH="/usr/share/dotnet/sdk:$PATH"
 # Dotnet tools
-export PATH="$PATH:/home/miki/.dotnet/tools"
+export PATH="$PATH:$HOME/.dotnet/tools"
 
 # Aliases
 
