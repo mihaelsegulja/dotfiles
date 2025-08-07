@@ -73,6 +73,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 	helper = !/usr/bin/gh auth git-credential
 [core]
 	editor = nvim
+    compression = 9
 [init]
 	defaultBranch = main
 
