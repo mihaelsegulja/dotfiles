@@ -58,4 +58,8 @@
     "typescript.suggest.autoImports": true,
     "javascript.preferences.importModuleSpecifier": "shortest",
     "typescript.preferences.importModuleSpecifier": "shortest",
+    "files.associations": {
+        "*.tsx": "typescriptreact"
+    },
+    "editor.tabSize": 2,
 }

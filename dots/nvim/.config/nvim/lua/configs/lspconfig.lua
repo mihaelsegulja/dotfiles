@@ -4,7 +4,6 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 local servers = {
-  "omnisharp",
   "clangd",
   "html",
   "cssls",
@@ -27,13 +26,29 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.omnisharp.setup {
-  cmd = {
-    vim.fn.stdpath("data") .. "/mason/packages/omnisharp/omnisharp",
-    "--languageserver",
-    "--hostPID",
-    tostring(vim.fn.getpid())
+local lspconfig = require "lspconfig"
+local configs = require "lspconfig.configs"
+
+if not configs.roslyn then
+  configs.roslyn = {
+    default_config = {
+      cmd = {
+        "roslyn",
+        "--logLevel", "information",
+        "--extensionLogDirectory", vim.fn.stdpath("cache") .. "/roslynLspLogs",
+        "--stdio",
+      },
+      filetypes = { "cs", "vb" },
+      root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj", ".git"),
+      single_file_support = true,
+    },
   }
+end
+
+lspconfig.roslyn.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
 }
 
 lspconfig.asm_lsp.setup {
