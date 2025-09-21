@@ -118,12 +118,10 @@ pokemon-colorscripts -r
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Dotnet
-export PATH="/usr/share/dotnet/sdk:$PATH"
-# Dotnet tools
-export PATH="$PATH:$HOME/.dotnet/tools"
-
 # Aliases
+
+# fastfetch
+alias ff="fastfetch"
 
 # git
 alias gs="git status --short"
@@ -137,3 +135,5 @@ alias gb="git branch"
 alias gi="git init"
 alias gcl="git clone"
 
+# Exports
+export EDITOR=nvim

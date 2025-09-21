@@ -42,7 +42,7 @@ M.ui = {
       "filetype",
       "encoding",
       "indent",
-      "file_size",
+      -- "file_size",
       "cwd",
       "cursor",
     },
@@ -53,16 +53,16 @@ M.ui = {
       encoding = function()
         local enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
         local ff = vim.bo.fileformat
-        return string.format("%%#Gray#%s [%s] %%*", enc:upper(), ff:upper())
+        return string.format("%%#Gray#%s[%s] %%*", enc:upper(), ff:upper())
       end,
       filetype = function()
         return string.format("%%#Aqua#%s %%*", vim.bo.filetype)
       end,
       indent = function()
         if vim.bo.expandtab then
-          return string.format("%%#Gray#Spaces:%d %%*", vim.bo.shiftwidth)
+          return string.format("%%#Gray#Spcs:%d %%*", vim.bo.shiftwidth)
         else
-          return string.format("%%#Gray#Tab size:%d %%*", vim.bo.tabstop)
+          return string.format("%%#Gray#Tbsz:%d %%*", vim.bo.tabstop)
         end
       end,
       file_size = function()

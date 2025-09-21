@@ -5,20 +5,6 @@ My dotfiles and setup scripts
 > [!IMPORTANT]
 > This repository is made for my personal use, so I can't guarantee that everything will work properly with your setup. However, feel free to copy or adapt any files to suit your needs.
 
-## My Setup
-
-- 🖥️ **OS / DE:** EndeavourOS / KDE Plasma 6.x
-- 🎨 **Theme:** [Gruvbox](https://github.com/morhetz/gruvbox)
-- 🎨 **Plasma Theme:**
-  - [Klassy](https://github.com/paulmcauley/klassy) (Application Style, Window Decorations)
-  - [GruvboxPlasma](https://www.pling.com/p/1327719/) (Plasma Style, Colors)
-- 🧱 **Icons:** [Papirus Colors Dark](https://store.kde.org/p/1651940)
-- 🧮 **Font:** Fira Sans + Fira Code Nerd Font
-- 🛠️ **KWin Scripts:** [Krohnkite](https://github.com/anametologin/krohnkite)
-- 📦 **Terminal:** Konsole
-- 📂 **File Manager:** Dolphin
-- 📜 **Editors:** Neovim + NVChad, VSCode, Kate
-
 ## Dotfiles
 
 The `dots/` directory contains my dotfiles, which are managed with `stow`.
@@ -57,6 +43,15 @@ Install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh):
 
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### Path
+
+```shell
+# Dotnet
+export PATH="/usr/share/dotnet/sdk:$PATH"
+# Dotnet tools
+export PATH="$PATH:$HOME/.dotnet/tools"
 ```
 
 ### .gitconfig
