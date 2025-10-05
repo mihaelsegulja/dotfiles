@@ -1,9 +1,7 @@
--- load defaults i.e lua_lsp
-require("nvchad.configs.lspconfig").defaults()
+local nvlsp = require "nvchad.configs.lspconfig"
+nvlsp.defaults()
 
-local lspconfig = require "lspconfig"
-
-local servers = {
+vim.lsp.enable {
   "clangd",
   "html",
   "cssls",
@@ -12,47 +10,48 @@ local servers = {
   "sqlls",
   "marksman",
   "jdtls",
-  "asm_lsp"
 }
 
-local nvlsp = require "nvchad.configs.lspconfig"
+local mason_path = vim.fn.stdpath "data" .. "/mason/packages"
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
-end
+local rzls_path = mason_path .. "/rzls/libexec"
+local roslyn_cmd = {
+  vim.fn.expand(mason_path .. "/roslyn/roslyn"),
+  "--stdio",
+  "--logLevel=Information",
+  "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
+  "--razorSourceGenerator=" .. vim.fs.joinpath(rzls_path, "Microsoft.CodeAnalysis.Razor.Compiler.dll"),
+  "--razorDesignTimePath=" .. vim.fs.joinpath(rzls_path, "Targets", "Microsoft.NET.Sdk.Razor.DesignTime.targets"),
+  "--extension",
+  vim.fs.joinpath(rzls_path, "RazorExtension", "Microsoft.VisualStudioCode.RazorExtension.dll"),
+}
 
-local lspconfig = require "lspconfig"
-local configs = require "lspconfig.configs"
-
-if not configs.roslyn then
-  configs.roslyn = {
-    default_config = {
-      cmd = {
-        "roslyn",
-        "--logLevel", "information",
-        "--extensionLogDirectory", vim.fn.stdpath("cache") .. "/roslynLspLogs",
-        "--stdio",
-      },
-      filetypes = { "cs", "vb" },
-      root_dir = lspconfig.util.root_pattern("*.sln", "*.csproj", ".git"),
-      single_file_support = true,
+vim.lsp.config("roslyn", {
+  cmd = roslyn_cmd,
+  settings = {
+    ["csharp|inlay_hints"] = {
+      csharp_enable_inlay_hints_for_implicit_object_creation = true,
+      csharp_enable_inlay_hints_for_lambda_parameter_types = true,
+      csharp_enable_inlay_hints_for_types = true,
+      dotnet_enable_inlay_hints_for_parameters = true,
+      dotnet_suppress_inlay_hints_for_parameters_that_match_argument_name = true,
     },
-  }
-end
+  },
+})
 
-lspconfig.roslyn.setup {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
-}
+vim.lsp.enable "roslyn"
 
-lspconfig.asm_lsp.setup {
-  cmd = { "asm-lsp" },
-  filetypes = { "asm", "vmasm", "nasm" },
-  root_dir = lspconfig.util.root_pattern(".asm-lsp.toml", ".", ".git")
+vim.diagnostic.config {
+  underline = true,
+  virtual_text = false,
+  update_in_insert = false,
+  severity_sort = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = " ",
+      [vim.diagnostic.severity.WARN] = " ",
+      [vim.diagnostic.severity.HINT] = " ",
+      [vim.diagnostic.severity.INFO] = " ",
+    },
+  },
 }

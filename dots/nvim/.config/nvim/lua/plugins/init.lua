@@ -43,7 +43,7 @@ return {
       "nvim-lua/plenary.nvim",
     },
     config = function()
-      require("telescope").load_extension("lazygit")
+      require("telescope").load_extension "lazygit"
     end,
   },
   {
@@ -51,29 +51,33 @@ return {
     config = function()
       require("hover").setup {
         init = function()
-          require("hover.providers.lsp")
+          require "hover.providers.lsp"
         end,
         preview_opts = {
-          border = 'single'
+          border = "single",
         },
         preview_window = false,
         title = true,
-        mouse_providers = {
-          'LSP'
-        },
-        mouse_delay = 500
       }
-    end
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "vim", "lua", "vimdoc",
-        "html", "css", "javascript",
-        "typescript", "c", "cpp",
-        "bash", "markdown", "java",
-        "c_sharp"
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "c",
+        "cpp",
+        "bash",
+        "markdown",
+        "java",
+        "c_sharp",
       },
     },
   },
