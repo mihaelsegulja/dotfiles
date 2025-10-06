@@ -1,3 +1,3 @@
 require "nvchad.options"
 
-vim.o.cursorlineopt ='both'
+vim.o.cursorlineopt = "both"

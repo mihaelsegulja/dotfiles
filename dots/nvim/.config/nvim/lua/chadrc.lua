@@ -53,7 +53,7 @@ M.ui = {
       encoding = function()
         local enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
         local ff = vim.bo.fileformat
-        return string.format("%%#Gray#%s[%s] %%*", enc:upper(), ff:upper())
+        return string.format("%%#Gray#%s[%s] %%*", enc:lower(), ff:lower())
       end,
       filetype = function()
         return string.format("%%#Aqua#%s %%*", vim.bo.filetype)
