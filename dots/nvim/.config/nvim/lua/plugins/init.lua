@@ -80,7 +80,6 @@ return {
         "cpp",
         "bash",
         "markdown",
-        "markdown_inline",
         "java",
         "c_sharp",
         "dockerfile",
@@ -92,5 +91,53 @@ return {
     opts = {
       padding = true,
     },
+  },
+  {
+    "mikavilpas/yazi.nvim",
+    version = "*",
+    event = "VeryLazy",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", lazy = true },
+    },
+    keys = {
+      {
+        "<leader>-",
+        mode = { "n", "v" },
+        "<cmd>Yazi<cr>",
+        desc = "Open yazi at the current file",
+      },
+      {
+        "<leader>cw",
+        "<cmd>Yazi cwd<cr>",
+        desc = "Open the file manager in nvim's working directory",
+      },
+      {
+        "<c-up>",
+        "<cmd>Yazi toggle<cr>",
+        desc = "Resume the last yazi session",
+      },
+    },
+    opts = {
+      open_for_directories = false,
+      keymaps = {
+        show_help = "<f1>",
+      },
+    },
+    init = function()
+      vim.g.loaded_netrwPlugin = 1
+    end,
+  },
+  {
+    "RRethy/vim-illuminate",
+    lazy = false,
+    config = function()
+      require("illuminate").configure {
+        providers = { "lsp", "treesitter", "regex" },
+        min_count_to_highlight = 1,
+        delay = 100,
+        large_file_cutoff = 10000,
+        filetypes_denylist = { "NvimTree", "neo-tree", "lazy", "mason" },
+      }
+    end,
   },
 }

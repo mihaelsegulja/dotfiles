@@ -25,6 +25,12 @@ chmod +x ./script_name.sh
 ./script_name.sh
 ```
 
+`post_install.sh`
+
+- Work in Progress
+
+- An all-in-one solution for making the process after a fresh OS install a bit easier
+
 `stow_dotfiles.sh`
 
 - Symlinks all dotfiles from `dots/` using `stow`
