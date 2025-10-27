@@ -13,13 +13,6 @@ M.base46 = {
   },
 }
 
-local gray = "#7c6f64"
-local dark_gray = "#3c3836"
-local aqua = "#689d6a"
-vim.cmd(string.format("highlight Gray guifg=%s gui=NONE guibg=NONE", gray))
-vim.cmd(string.format("highlight DarkGray guifg=%s gui=NONE guibg=NONE", dark_gray))
-vim.cmd(string.format("highlight Aqua guifg=%s gui=NONE guibg=NONE", aqua))
-
 M.ui = {
   number = true,
   relativenumber = true,
@@ -29,7 +22,7 @@ M.ui = {
   },
   statusline = {
     separator_style = "block",
-    theme = "default",
+    theme = "vscode_colored",
     order = {
       "mode",
       "file",
@@ -39,30 +32,34 @@ M.ui = {
       "%=",
       "diagnostics",
       "lsp",
+      "clear",
       "filetype",
       "encoding",
       "indent",
-      -- "file_size",
+      "file_size",
       "cwd",
       "cursor",
     },
     modules = {
       sep = function()
-        return "%#DarkGray#|%* "
+        return "| "
+      end,
+      clear = function()
+        return string.format "%%*"
       end,
       encoding = function()
         local enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
         local ff = vim.bo.fileformat
-        return string.format("%%#Gray#%s[%s] %%*", enc:lower(), ff:lower())
+        return string.format("%s[%s] ", enc:lower(), ff:lower())
       end,
       filetype = function()
-        return string.format("%%#Aqua#%s %%*", vim.bo.filetype)
+        return string.format("%s ", vim.bo.filetype)
       end,
       indent = function()
         if vim.bo.expandtab then
-          return string.format("%%#Gray#Spcs:%d %%*", vim.bo.shiftwidth)
+          return string.format("Spcs:%d ", vim.bo.shiftwidth)
         else
-          return string.format("%%#Gray#Tbsz:%d %%*", vim.bo.tabstop)
+          return string.format("Tbsz:%d ", vim.bo.tabstop)
         end
       end,
       file_size = function()
@@ -80,16 +77,21 @@ M.ui = {
         local gib = mib * 1024
 
         if fsize < kib then
-          size = string.format("%%#Gray#%dB %%*", fsize)
+          size = string.format("%dB ", fsize)
         elseif fsize < mib then
-          size = string.format("%%#Gray#%.1f KiB %%*", fsize / kib)
+          size = string.format("%.1f KiB ", fsize / kib)
         elseif fsize < gib then
-          size = string.format("%%#Gray#%.1f MiB %%*", fsize / mib)
+          size = string.format("%.1f MiB ", fsize / mib)
         else
-          size = string.format("%%#Gray#%.1f GiB %%*", fsize / gib)
+          size = string.format("%.1f GiB ", fsize / gib)
         end
 
         return size
+      end,
+      cursor = function()
+        local line = vim.fn.line "."
+        local col = vim.fn.col "."
+        return string.format("%%#St_pos_text# %d:%d %%*", line, col)
       end,
     },
   },

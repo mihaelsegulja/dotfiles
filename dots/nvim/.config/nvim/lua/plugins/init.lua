@@ -140,4 +140,8 @@ return {
       }
     end,
   },
+  {
+    "sindrets/diffview.nvim",
+    lazy = false,
+  },
 }
