@@ -22,7 +22,7 @@ M.ui = {
   },
   statusline = {
     separator_style = "block",
-    theme = "vscode_colored",
+    theme = "default",
     order = {
       "mode",
       "file",
@@ -88,11 +88,11 @@ M.ui = {
 
         return size
       end,
-      cursor = function()
-        local line = vim.fn.line "."
-        local col = vim.fn.col "."
-        return string.format("%%#St_pos_text# %d:%d %%*", line, col)
-      end,
+      -- cursor = function()
+      --   local line = vim.fn.line "."
+      --   local col = vim.fn.col "."
+      --   return string.format("%%#St_pos_text# %d:%d %%*", line, col)
+      -- end,
     },
   },
 }
