@@ -37,10 +37,6 @@ chmod +x ./script_name.sh
 
 - You can also pass the flag `-D` or `--unstow` to unstow dotfiles
 
-`install_packages_arch.sh`
-
-- Installs Arch and Flatpak packages from package lists (`scripts/pkglists/`)
-
 ## Other
 
 ### Oh My Zsh
