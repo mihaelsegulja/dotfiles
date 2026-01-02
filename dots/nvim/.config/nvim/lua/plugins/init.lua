@@ -144,4 +144,8 @@ return {
     "sindrets/diffview.nvim",
     lazy = false,
   },
+  {
+    "Exafunction/codeium.vim",
+    event = "InsertEnter",
+  },
 }

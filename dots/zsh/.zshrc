@@ -135,5 +135,9 @@ alias gb="git branch"
 alias gi="git init"
 alias gcl="git clone"
 
+# lazygit / lazydocker
+alias lzg="lazygit"
+alias lzd="lazydocker"
+
 # Exports
 export EDITOR=nvim
