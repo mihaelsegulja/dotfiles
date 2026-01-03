@@ -10,20 +10,19 @@ vim.lsp.enable {
   "sqlls",
   "marksman",
   "jdtls",
+  "arduino_language_server",
+  "angularls",
+  "cmake",
+  "pyright",
 }
 
 local mason_path = vim.fn.stdpath "data" .. "/mason/packages"
 
-local rzls_path = mason_path .. "/rzls/libexec"
 local roslyn_cmd = {
   vim.fn.expand(mason_path .. "/roslyn/roslyn"),
   "--stdio",
   "--logLevel=Information",
   "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
-  "--razorSourceGenerator=" .. vim.fs.joinpath(rzls_path, "Microsoft.CodeAnalysis.Razor.Compiler.dll"),
-  "--razorDesignTimePath=" .. vim.fs.joinpath(rzls_path, "Targets", "Microsoft.NET.Sdk.Razor.DesignTime.targets"),
-  "--extension",
-  vim.fs.joinpath(rzls_path, "RazorExtension", "Microsoft.VisualStudioCode.RazorExtension.dll"),
 }
 
 vim.lsp.config("roslyn", {
@@ -45,7 +44,7 @@ vim.lsp.enable "roslyn"
 vim.diagnostic.config {
   underline = true,
   virtual_text = false,
-  update_in_insert = false,
+  update_in_insert = true,
   severity_sort = true,
   signs = {
     text = {

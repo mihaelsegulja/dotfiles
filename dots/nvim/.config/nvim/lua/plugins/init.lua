@@ -99,24 +99,6 @@ return {
     dependencies = {
       { "nvim-lua/plenary.nvim", lazy = true },
     },
-    keys = {
-      {
-        "<leader>-",
-        mode = { "n", "v" },
-        "<cmd>Yazi<cr>",
-        desc = "Open yazi at the current file",
-      },
-      {
-        "<leader>cw",
-        "<cmd>Yazi cwd<cr>",
-        desc = "Open the file manager in nvim's working directory",
-      },
-      {
-        "<c-up>",
-        "<cmd>Yazi toggle<cr>",
-        desc = "Resume the last yazi session",
-      },
-    },
     opts = {
       open_for_directories = false,
       keymaps = {
@@ -147,5 +129,25 @@ return {
   {
     "Exafunction/codeium.vim",
     event = "InsertEnter",
+  },
+  {
+    "ahmedkhalf/project.nvim",
+    event = "VeryLazy",
+    opts = {
+      detection_methods = { "lsp", "pattern" },
+      patterns = { ".git", "Makefile", "package.json", "*.sln" },
+      silent_chdir = true,
+    },
+    config = function(_, opts)
+      require("project_nvim").setup(opts)
+      require("telescope").load_extension "projects"
+    end,
+  },
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre",
+    opts = {
+      options = { "buffers", "curdir", "tabpages", "winsize" },
+    },
   },
 }
