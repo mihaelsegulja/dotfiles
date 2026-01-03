@@ -27,15 +27,17 @@ chmod +x ./script_name.sh
 
 `post_install.sh`
 
-- Work in Progress
-
-- An all-in-one solution for making the process after a fresh OS install a bit easier
+- An all-in-one solution for making the setup process after a fresh OS install a bit easier
 
 `stow_dotfiles.sh`
 
 - Symlinks all dotfiles from `dots/` using `stow`
 
 - You can also pass the flag `-D` or `--unstow` to unstow dotfiles
+
+`install_pkgs_opensuse.sh`
+
+- Adds repositories and installs packages for OpenSUSE Tumbleweed
 
 ## Other
 
