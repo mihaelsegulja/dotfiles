@@ -18,7 +18,7 @@
             "displayName": "., <default> (sa)",
             "password": "",
             "id": "D29A95AB-401F-4909-8324-693B3179B343",
-            "groupId": "1DB03944-BF89-4800-8B18-48E942DE7E00",
+            "groupId": "ROOT",
             "profileSource": 0
         }
     ],
@@ -36,7 +36,6 @@
     "window.titleBarStyle": "custom",
     "mssql.objectExplorer.groupBySchema": true,
     "liveServer.settings.donotVerifyTags": true,
-    "workbench.colorTheme": "Gruvbox Dark Medium",
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -47,7 +46,7 @@
     "mssql.connectionGroups": [
         {
             "name": "ROOT",
-            "id": "1DB03944-BF89-4800-8B18-48E942DE7E00"
+            "id": "ROOT"
         }
     ],
     "[typescriptreact]": {
@@ -72,5 +71,14 @@
     },
     "leetcode.workspaceFolder": "/home/miki/Desktop/leetcode",
     "leetcode.defaultLanguage": "csharp",
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "http.systemCertificatesNode": true,
+    "diffEditor.codeLens": true,
+    "workbench.colorTheme": "Kanagawa",
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

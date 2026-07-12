@@ -141,3 +141,14 @@ alias lzd="lazydocker"
 
 # Exports
 export EDITOR=nvim
+export PATH=$HOME/.npm-global/bin:$PATH
+
+. "$HOME/.local/share/../bin/env"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/miki/.local/bin:$PATH"
