@@ -5,49 +5,59 @@ My dotfiles and setup scripts
 > [!IMPORTANT]
 > This repository is made for my personal use, so I can't guarantee that everything will work properly with your setup. However, feel free to copy or adapt any files to suit your needs.
 
-## Dotfiles
+## Setup
 
-The `dots/` directory contains my dotfiles, which are managed with `stow`.
+The top-level `bat/`, `btop/`, `nvim/`, `p10k/`, `tmux/`, `vscode/`, `yazi/`, and `zsh/` directories are [GNU Stow](https://www.gnu.org/software/stow/) packages.
 
-## Scripts
-
-The `scripts/` directory contains scripts for helping with setting up dotfiles and packages.
-
-In order to use any script:
+From the repository root, install the openSUSE packages and link the dotfiles:
 
 ```shell
-cd scripts/
-
-# Add execution permission for the file if needed:
-chmod +x ./script_name.sh
-
-# Run the script:
-./script_name.sh
+chmod +x scripts/install_pkgs_opensuse.sh
+./scripts/install_pkgs_opensuse.sh
+stow -R --target="$HOME" bat btop nvim p10k tmux vscode yazi zsh
 ```
 
-`post_install.sh`
+Remove the links with:
 
-- An all-in-one solution for making the setup process after a fresh OS install a bit easier
+```shell
+stow -D --target="$HOME" bat btop nvim p10k tmux vscode yazi zsh
+```
 
-`stow_dotfiles.sh`
+### Zsh
 
-- Symlinks all dotfiles from `dots/` using `stow`
+[Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) requires Zsh, Git, and either curl or wget. These are included in the package script, or can be installed separately:
 
-- You can also pass the flag `-D` or `--unstow` to unstow dotfiles
+```shell
+sudo zypper install zsh git curl
+chsh -s "$(command -v zsh)"
+```
 
-`install_pkgs_opensuse.sh`
-
-- Adds repositories and installs packages for OpenSUSE Tumbleweed
-
-## Other
-
-### Oh My Zsh
-
-Install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh):
+Install Oh My Zsh:
 
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
+Install the external plugins and [Powerlevel10k](https://github.com/romkatv/powerlevel10k) used by `.zshrc`:
+
+```shell
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions \
+  "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting \
+  "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k \
+  "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+```
+
+The shell startup also uses [pokemon-colorscripts](https://gitlab.com/phoneybadger/pokemon-colorscripts):
+
+```shell
+git clone --depth=1 https://gitlab.com/phoneybadger/pokemon-colorscripts.git /tmp/pokemon-colorscripts
+sudo /tmp/pokemon-colorscripts/install.sh
+rm -rf /tmp/pokemon-colorscripts
+```
+
+Comment out `pokemon-colorscripts -r` in `.zshrc` if it is not installed or not wanted at shell startup.
 
 ### Path
 
@@ -58,7 +68,7 @@ export PATH="/usr/share/dotnet/sdk:$PATH"
 export PATH="$PATH:$HOME/.dotnet/tools"
 ```
 
-### .gitconfig
+### Git
 
 ```shell
 [user]
@@ -78,18 +88,16 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 
 ```
 
-### VSCode extensions
+### VS Code extensions
 
 To restore (install) extensions from list:
 
 ```shell
-cd dots/vscode/
-
-cat extensions-list.txt | xargs -n 1 code --install-extension
+xargs -n 1 code --install-extension < vscode/extensions-list.txt
 ```
 
 To backup current extensions:
 
 ```shell
-code --list-extensions > extensions-list.txt
+code --list-extensions > vscode/extensions-list.txt
 ```

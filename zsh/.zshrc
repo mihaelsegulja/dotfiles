@@ -139,16 +139,18 @@ alias gcl="git clone"
 alias lzg="lazygit"
 alias lzd="lazydocker"
 
+# opencode
+alias oc="opencode"
+
 # Exports
 export EDITOR=nvim
 export PATH=$HOME/.npm-global/bin:$PATH
 
 . "$HOME/.local/share/../bin/env"
 
-
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
-
-# Added by Antigravity CLI installer
+# >>> Codex installer >>>
 export PATH="/home/miki/.local/bin:$PATH"
+# <<< Codex installer <<<

@@ -32,7 +32,7 @@ require("lazy").setup({
     lazy = false,
     version = false,
   },
-  install = { colorscheme = { "kanagawa" } },
+  install = { colorscheme = { "solarized" } },
   checker = {
     enabled = true,
     notify = false,

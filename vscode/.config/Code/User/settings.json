@@ -74,7 +74,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "http.systemCertificatesNode": true,
     "diffEditor.codeLens": true,
-    "workbench.colorTheme": "Kanagawa",
+    "workbench.colorTheme": "Solarized Dark",
     "[scss]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },

@@ -2,23 +2,31 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa",
+      colorscheme = "solarized",
     },
   },
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
+  -- {
+  --   "ellisonleao/gruvbox.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
   {
-    "rebelot/kanagawa.nvim",
+    "maxmx03/solarized.nvim",
     lazy = false,
     priority = 1000,
-  },
-  {
-    "ellisonleao/gruvbox.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-  {
-    "shaunsingh/solarized.nvim",
-    lazy = false,
-    priority = 1000,
+    opts = {
+      variant = "autumn",
+    },
+    config = function(_, opts)
+      vim.o.background = "dark"
+      require("solarized").setup(opts)
+      vim.cmd.colorscheme("solarized")
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -34,7 +42,7 @@ return {
     },
   },
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
         "stylua",
